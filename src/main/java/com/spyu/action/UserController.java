@@ -47,8 +47,8 @@ public class UserController {
 	@RequestMapping(value="/hello2",method=RequestMethod.GET)
 	public @ResponseBody String helloWorld2(@RequestParam("userId")String userId,@RequestParam("userName")String userName){
 		System.out.println("helloWorld:"+userId+"  "+userName);
-		this.userInfoService.findByName(userName);
-		return "hello:"+userId+"  "+userName;
+		UserInfo user=this.userInfoService.findByName(userName);
+		return "hello:"+userId+"  "+userName+"  "+user.getPassword()+"  "+user.getRoles().size();
 	}
 	
 	@RequestMapping(value="/hello3",method=RequestMethod.POST)
