@@ -7,6 +7,8 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 System.out.println(basePath);
+String message1=request.getParameter("message");
+System.out.println(message1);
 %>
 <html>
 	<head>
